@@ -32,12 +32,6 @@ class MainActivity : AppCompatActivity() {
 
         val cepDigitado = etCep.text.toString().trim()
 
-        // Validação: CEP deve ter 8 dígitos numéricos
-        if (cepDigitado.length != 8 || !cepDigitado.all { it.isDigit() }) {
-            tvResultado.text = "CEP inválido. Digite 8 números."
-            return
-        }
-
         tvResultado.text = "Consultando..."
 
         val client = OkHttpClient()
